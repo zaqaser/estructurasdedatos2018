@@ -1,0 +1,32 @@
+template <class K, class D>
+void Queue<K,D>::PushBack(const K & p_key, const D & p_dato)
+{
+	List.InsertFront(p_key,  p_dato);
+}
+template <class K, class D>
+void Queue<K,D>::Pop()
+{
+	List.RemoveBack();
+}
+
+template <class K, class D>
+K Queue<K,D>::Top()
+{
+	cout<<"top ->" << List.raiz->key << endl;
+	//return List.raiz->dato;
+}
+template <class K, class D>
+void Queue<K,D>::Print()
+{
+	List.Show();
+}
+
+template <class K, class D>
+Queue<K,D>::Queue()
+{
+}
+
+template <class K, class D>
+Queue<K,D>::~Queue()
+{
+}
