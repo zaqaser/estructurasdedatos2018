@@ -1,0 +1,63 @@
+Range Trees
+
+Suppose you have "points" in 1-dimension (aka numbers)
+Want to anser range queries: "Return all keys between x1 and x2."
+How could you solve this?
+
+Balanced Binary Search Tree
+
+Range Queries on Binary Search Trees
+Assume all data are in the leaves
+ 
+Search for x1 and x2
+let Ssplit be the node were the dearch paths diverge
+Output leaves in the rigth subtrees of nodes on the path from Xsplit to X1
+Output leaves in the left subtrees of nodes on the path from Xsplit to X2
+
+1-D Query Time 
+O(k+log n), where k is the number of points output.
+- Tree is balanced, so depth is O(log n)
+-Length of paths to X1 and X2 are O(log n)
+-Therefore visit O(log n) nodes to find the roots of subtrees to 	output.
+-Traversing the subtrees is linear, O(k),in the number of items
+	output.
+
+How would you generalize to 2d?
+
+2d Range Trees
+ Treat range query as 2 nested one-dimensional
+queries:
+-[X1,X2] by [Y1,Y2]
+-Firs ask for the points with x-coordinates in the given
+	range[X1,X2]=> a set of subtrees  
+-Insted of all points in these subtrees, only want those that
+	fall in [y1,y2]
+
+P(u) is the set of points under u 
+We store those points in
+ 
+another tree Y(u), keyed
+by the y-dimension
+
+ 
+Range Trees , continued
+ 
+
+2d.range tree space requirements
+Sum of the sizes of Y(u) for u at given depth is O(n)
+-Each point stored in the Y(u) tree for at most one node at a
+	given depth
+Since main tree is balanced, has O(log n) depth
+Meaning total space requirement is O(n long n)
+
+2D Range Tree Range Searches
+ 
+
+ 
+
+
+
+
+
+
+                                                                                               
